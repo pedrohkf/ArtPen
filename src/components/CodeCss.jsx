@@ -20,17 +20,10 @@ export const CodeCss = () => {
     [codeCSS]
   );
 
-  const handleChange = (e) => {
-    setCodeCSS(e.target.value);
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        {/* <textarea type="text" value={codeCSS} onChange={handleChange} />
-        {codeCSS.length} */}
         <Editor
-          height="90vh"
           defaultLanguage="css"
           defaultValue={codeCSS}
           value={codeCSS}

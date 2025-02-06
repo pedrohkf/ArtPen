@@ -8,7 +8,6 @@ function App() {
   return (
     <CodeProvider>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/" element={<CodeEditor />} />
       </Routes>
     </CodeProvider>

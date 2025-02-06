@@ -20,20 +20,10 @@ export const CodeHtml = () => {
     [codeHTML]
   );
 
-  const handleChange = (e) => {
-    setCodeHTML(e.target.value);
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        {/* <textarea
-          type="text"
-          value={codeHTML}
-          onChange={handleChange}
-        /> */}
         <Editor
-          height="90vh"
           defaultLanguage="html"
           defaultValue={codeHTML}
           value={codeHTML}
