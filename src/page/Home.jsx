@@ -1,9 +1,10 @@
+import { CodeEditor } from "./codeEditor/CodeEditor";
 import styles from "./Home.module.css";
 
 export const Home = () => {
     return (
         <div className={styles.container}>
-            <a href="/codeEditor">clica aqui</a>
+            <CodeEditor />
         </div>
     )
 }
