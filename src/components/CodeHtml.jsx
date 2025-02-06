@@ -24,6 +24,7 @@ export const CodeHtml = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <Editor
+          height="90vh"
           defaultLanguage="html"
           defaultValue={codeHTML}
           value={codeHTML}

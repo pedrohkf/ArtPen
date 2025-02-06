@@ -25,11 +25,13 @@ export const CodeCss = () => {
       <div className={styles.content}>
         <Editor
           defaultLanguage="css"
+          height="90vh"
           defaultValue={codeCSS}
           value={codeCSS}
           theme="vs-dark"
           onChange={(value) => setCodeCSS(value)}
         />
+        {codeCSS.length}
       </div>
     </div>
   );
