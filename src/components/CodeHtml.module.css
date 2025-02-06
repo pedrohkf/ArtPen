@@ -1,13 +1,13 @@
 .container{
     display: flex;
-    width: 100%;
+    width: 50%;
 }
 
 .content{
-    width: 50%;
-    background-color: rgb(48, 56, 56);
+    background-color: black;
+    width: 100%;
 }
 
-.codeRendered {
-    width: 50%;
+.editor{
+    color: black;
 }

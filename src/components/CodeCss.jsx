@@ -1,19 +1,43 @@
-import React, { useState } from "react";
-import styles from "./CodeCss.module.css"
+import styles from "./CodeCss.module.css";
+import { useCodeContext } from "../hooks/useCodeContext";
+import { useEffect } from "react";
+import { Editor } from "@monaco-editor/react";
 
 export const CodeCss = () => {
-  const [css, setCSS] = useState("");
+  const { codeCSS, setCodeCSS } = useCodeContext();
 
-  const handleChangeCSS = (e) => {
-    setCSS(e.target.value);
+  useEffect(() => {
+    const codeSaved = localStorage.getItem("codeCSS");
+    if (codeSaved) {
+      setCodeCSS(codeSaved);
+    }
+  }, []);
+
+  useEffect(
+    (e) => {
+      localStorage.setItem("codeCSS", codeCSS);
+    },
+    [codeCSS]
+  );
+
+  const handleChange = (e) => {
+    setCodeCSS(e.target.value);
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <textarea type="text" onChange={handleChangeCSS} />
+        {/* <textarea type="text" value={codeCSS} onChange={handleChange} />
+        {codeCSS.length} */}
+        <Editor
+          height="90vh"
+          defaultLanguage="css"
+          defaultValue={codeCSS}
+          value={codeCSS}
+          theme="vs-dark"
+          onChange={(value) => setCodeCSS(value)}
+        />
       </div>
-
-      <style>{css}</style>
     </div>
   );
 };
